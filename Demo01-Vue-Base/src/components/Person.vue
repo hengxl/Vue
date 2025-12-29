@@ -17,22 +17,33 @@
 -->
 
 <!-- VUE3版本 -->
-<!-- 语法糖写法 需要执行命令安装开发插件
-    npm i vite-plugin-vue-setup-extend -D
+<!-- 
+    一：语法糖写法 需要执行命令安装开发插件
+        npm i vite-plugin-vue-setup-extend -D
+    二：响应式数据
+        1.在 script 里响应式数据需要获取 value 属性
+        2.在 template 里响应式数据不需要获取 value 属性，因为 template 会自动解包
 -->
 <script lang="ts" setup name="Person-HXL">
+    // 导入ref函数
+    import { ref } from "vue";
+    
+    //------------ 简单类型 ------------
+    // 响应式数据
+    let age = ref(18);
     // 非响应式数据
-    let name: string = "张三";
-    let age: number = 18;
+    let name = "张三";
     let phone: string = "13800138000";
+
 
 
     // 定义方法
     function changeAge() {
-        age += 1;
+        age.value += 1;
     }
+
     function getPhone() {
-        alert("用户的电话号码是: " + phone);
+        alert("用户" + name + "的电话号码是: " + phone);
     }
 </script>
 
@@ -98,5 +109,8 @@
         text-align: left;
         color: #ff6600;
         background-color: #f0f0f0;
+    }
+    button {
+        margin: 0 10px;
     }
 </style>
