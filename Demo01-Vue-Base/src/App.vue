@@ -8,7 +8,9 @@
     <!-- 使用 Car 组件 -->
     <!-- <Car/> -->
     <!-- 使用 Compute 组件 -->
-    <Compute/>
+    <!-- <Compute/> -->
+    <!-- 使用 Watch 组件 -->
+    <Watch/>
 </template>
 
 <!-- 写 TS 脚本 -->
@@ -20,13 +22,16 @@
     import Car from './components/Car.vue'
     // 引入 Compute 组件
     import Compute from './components/Compute.vue'
+    // 引入 Watch 组件
+    import Watch from './components/Watch.vue';
     
     export default {
         name: "App", // 定义并导出 App 组件
         components: { // 注册 Person 组件
             Person,
             Car,
-            Compute
+            Compute,
+            Watch
         }
     }
 </script>
