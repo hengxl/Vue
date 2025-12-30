@@ -1,12 +1,14 @@
 <!-- 写 HTML 代码 -->
 <template>
-    <div class="app">
+    <!-- <div class="app">
         <h1> hello my vue !</h1>
-    </div>
+    </div> -->
     <!-- 使用 Person 组件 -->
-    <Person/>
+    <!-- <Person/> -->
     <!-- 使用 Car 组件 -->
-    <Car/>
+    <!-- <Car/> -->
+    <!-- 使用 Compute 组件 -->
+    <Compute/>
 </template>
 
 <!-- 写 TS 脚本 -->
@@ -16,12 +18,15 @@
     import Person from './components/Person.vue'
     // 引入 Car 组件
     import Car from './components/Car.vue'
+    // 引入 Compute 组件
+    import Compute from './components/Compute.vue'
     
     export default {
         name: "App", // 定义并导出 App 组件
         components: { // 注册 Person 组件
             Person,
-            Car
+            Car,
+            Compute
         }
     }
 </script>
