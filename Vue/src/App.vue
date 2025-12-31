@@ -16,7 +16,7 @@
 </template>
 
 <!-- 写 TS 脚本 -->
-<script lang="ts">
+<!-- <script lang="ts">
 
     // 引入 Person 组件
     import Basic1 from './components/01-Basics.vue'
@@ -39,6 +39,20 @@
             WatchEffect
         }
     }
+</script> -->
+<script lang="ts" setup name="App">
+
+    // 引入 Person 组件
+    import Basic1 from './components/01-Basics.vue'
+    // 引入 Car 组件
+    import Basic2 from './components/02-Basic.vue'
+    // 引入 Compute 组件
+    import Compute from './components/03-Compute.vue'
+    // 引入 Watch 组件
+    import Watch from './components/04-Watch.vue';
+    // 引入 WatchEffect 组件
+    import WatchEffect from './components/05-WatchEffect.vue';
+
 </script>
 
 <!-- 写 CSS 样式 -->

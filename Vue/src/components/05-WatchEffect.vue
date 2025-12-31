@@ -45,11 +45,18 @@
 
 </script>
 
-<style>
+<!-- scoped 具备样式 -->
+<style scoped>  
     .watchEffect {
         border: 1px solid #ccc;
         padding: 20px;
         margin: 20px;
         text-align: center;
+    }
+
+    button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
     }
 </style>

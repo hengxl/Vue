@@ -113,7 +113,7 @@
     }, { deep: true });
 </script>
 
-<style>
+<style scoped>
     .watch {
         border: 1px solid #ccc;
         padding: 20px;
