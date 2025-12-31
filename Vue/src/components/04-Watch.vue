@@ -13,13 +13,23 @@
             <button @click="changeAge">修改年龄</button>
             <button @click="changePerson">整体修改对象</button>
         </div>
+        <div class="anyOneWatch">
+            <h2>Watch 监视某一个属性</h2>
+            <p>姓名：{{ people.name }}</p>
+            <p>年龄：{{ people.age }}</p>
+            <p>车辆1: {{ people.cars.car1 }}</p>
+            <p>车辆2: {{ people.cars.car2 }}</p>
+            <button @click="changeCar1">修改车辆1</button>
+            <button @click="changeCar2">修改车辆2</button>
+            <button @click="changeCar">整体修改车辆对象</button>
+        </div>
     </div>
     
 </template>
 
 <script lang="ts" setup name="Watch-HXL">
 
-    import { ref, watch } from 'vue';
+    import { ref, reactive, watch } from 'vue';
 
     //------ 简单类型 ------
     const number = ref(0);
@@ -60,6 +70,32 @@
     watch(person, (newVal, oldVal) => {
         console.log('Person changed:', oldVal, '=>', newVal);
     }, { deep: true /** , immediate: true */});
+
+    // ------ 监视某一个属性 ------
+    const people = ref({
+        name: '王五',
+        age: 25,
+        cars: {
+            car1: '自行车',
+            car2: '电瓶车'
+        }
+    });
+    function changeCar1() {
+        people.value.cars.car1 = '摩托车';
+    };
+    function changeCar2() {
+        people.value.cars.car2 = '汽车';
+    };
+    function changeCar() {
+        people.value.cars = {
+            car1: '火车',
+            car2: '飞机'
+        };
+    };
+    // 只监视 cars.car1 属性的变化
+    watch(() => people.value.cars.car1, (newVal, oldVal) => {
+        console.log('Car1 changed:', oldVal, '=>', newVal);
+    });
 </script>
 
 <style>
@@ -76,6 +112,12 @@
         text-align: center;
     }
     .complexWatch {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 20px;
+        text-align: center;
+    }
+    .anyOneWatch {
         border: 1px solid #ccc;
         padding: 20px;
         margin: 20px;
