@@ -18,8 +18,11 @@
       前者是将 students 作为字符串传递给 Props 组件的 stu-list 属性
       后者是将 students 作为变量传递给 Props 组件的 stu-list 属性 
     -->
-    <Props a="哈哈" :stuList="students"/>
+    <!-- <Props a="哈哈" :stuList="students"/> -->
     <!-- <Props a="哈哈" :stuList111="students"/> --> <!-- 测试默认值 -->
+
+    <!-- 使用 Hooks 组件 -->
+     <Hooks/>
 </template>
 
 <!-- 写 TS 脚本 -->
@@ -62,15 +65,17 @@
     import WatchEffect from './components/05-WatchEffect.vue';
     // 引入 Prop 组件
     import Props from './components/07-Props.vue';
+    // 引入 Hooks 组件
+    import Hooks from './components/08-Hooks.vue';
 
-    import { type StudentList } from './types';
+    // import { type StudentList } from './types';
 
-    // 定义学生列表数据
-    let students = reactive<StudentList>([
-        { id: 1, name: '张三', age: 18 },
-        { id: 2, name: '李四', age: 19 },
-        { id: 3, name: '王五', age: 20 }
-    ]);
+    // // 定义学生列表数据
+    // let students = reactive<StudentList>([
+    //     { id: 1, name: '张三', age: 18 },
+    //     { id: 2, name: '李四', age: 19 },
+    //     { id: 3, name: '王五', age: 20 }
+    // ]);
 </script>
 
 <!-- 写 CSS 样式 -->
