@@ -28,7 +28,9 @@ const router = createRouter({
           // ?表示age参数可传可不传
           name: "gou-detail",
           path: "detail/:id/:name/:age?",
-          component: DogDetail,
+          component: DogDetail, // 类似于 <DogDetail />
+          // props: true, // 开启props传参 仅适用params传参
+          props: (route) => route.params // 使用函数形式 兼容params和query传参
         },
       ],
     },
