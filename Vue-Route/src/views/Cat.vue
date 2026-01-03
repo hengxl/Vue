@@ -4,7 +4,7 @@
         <h1>🐱 {{ cat.name }}</h1>
         <p>名字：{{ cat.name }}</p>
         <p>年龄：{{ cat.age }}岁</p>
-        <button @click="showDog">展示狗</button>
+        <button @click="showDog(dog)">展示狗</button>
     </div>
 </template>
 
@@ -20,14 +20,27 @@
         age: 4
     })
 
+    let dog = ref({
+        id: 99,
+        name: '编程式路由狗',
+        age: 6
+    })
+
     const router = useRouter();
-    function showDog() {
+
+    // 加入类型接口
+    interface DogInterface {
+        id: number;
+        name: string;
+        age: number;
+    }
+    function showDog(dog: DogInterface) {
         router.push({
             name: 'gou-detail',
             params: {
-                id: 99,
-                name: '编程式路由狗狗',
-                age: 6
+                id: dog.id,
+                name: dog.name,
+                age: dog.age
             }
         });
     }
