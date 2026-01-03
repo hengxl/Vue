@@ -13,7 +13,10 @@ const router = createRouter({
   history: createWebHistory(),
   // 定义路由规则
   routes: [
-    { path: "/", component: Dog },
+    // 重定向到狗狗页面
+    { path: "/",
+      redirect: '/cat'
+    },
     {
       name: "gou",
       path: "/dog",
